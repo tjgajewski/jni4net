@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>jni4net</artifactId>
-        <groupId>net.sf.jni4net</groupId>
-        <version>0.8.9.0</version>
-    </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sf.jni4net</groupId>
     <artifactId>jni4net.j</artifactId>
     <version>0.8.9.0</version>
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
     <name>jni4net Java</name>
     <dependencies>
         <dependency>
@@ -21,6 +22,15 @@
     </dependencies>
 	<build>
 		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
 		<!--
 		Signing is probably not good idea, as it prevents other people from adding to java_.util package for example
 			<plugin>
@@ -51,13 +61,13 @@
 				</configuration>
 			</plugin>
 			-->
-            <plugin>
-               <artifactId>maven-deploy-plugin</artifactId>
-               <version>2.4</version>
-               <configuration>
-                 <skip>false</skip>
-              </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--               <artifactId>maven-deploy-plugin</artifactId>-->
+<!--               <version>2.4</version>-->
+<!--               <configuration>-->
+<!--                 <skip>false</skip>-->
+<!--              </configuration>-->
+<!--            </plugin>-->
 		</plugins>
 	</build> 
 </project>
